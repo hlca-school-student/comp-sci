@@ -1,7 +1,9 @@
 h1 {
-    color: cadetblue;
+    color: blue;
+    background-color: green;
 }
 
 p {
-    color: palevioletred;
+    color: purple;
+    background-color: orange;
 }
