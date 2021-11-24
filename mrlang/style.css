@@ -1,0 +1,26 @@
+
+/**
+Steps to use cool imported fonts.
+
+1. go to your directory in the project and do a 'mkdir fonts' - you should now have a folder called 'fonts' in your root directory. This will be where you store your files for the imported fonts
+2. download a font of your choice from https://www.fontsquirrel.com/ - note whether the font files are ttf, otf, etc
+3. the download will likely be a zip file... unpack it and drag the unpacked folder into your new fonts directory.
+4. the fonts are now ready for import as font faces that can later be referenced via 'font-family' in css. See below example of an imported font. Note that I declare the 'font-family' name that will be referenced later in the css, and give the path from the root of the directory as the 'src' property with the correct file extension (ttf in this case). This is how the code finds the font file and serves it to users. I also like to declare the format for older browsers
+5. Note how I reference the new font in the h1 via CSS, and give it a fallback websafe font (one of the 25 or so font's I mentioned that the browser already has loaded) font in case the browser fails to render the font.
+7. NOTE: the url paths must begin with a '.' this means 'start from the directory that index.html' is in. Not doing this will make the path start from the root directory of your machine which will fail
+6. Add some fun size and letter spacing properties
+*/
+
+/** Example of an imported font **/
+@font-face {
+    font-family: reey;
+    src: url('./fonts/reey/Reey-Regular.otf');
+}
+
+/** Using the font **/
+h1 {
+    color: #047D07;
+    font-family: reey, serif;
+    font-size: 50px;
+    letter-spacing: 20px;
+}
