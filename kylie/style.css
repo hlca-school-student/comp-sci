@@ -5,3 +5,22 @@ h1 {
 p {
     color: palevioletred;
 }
+.nav-component ul {
+    display:flex;
+    flex-direction:row;
+  }
+  
+  .nav-component ul li {
+    list-style-type: none;
+  }
+  .nav-component ul li a {
+    text-decoration: none;
+    padding: 15px;
+    font-family:arial;
+    color:#D46A6A;
+  }
+  .nav-component ul li a:hover {
+    color:#550000;
+    transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220); 
+    transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); 
+  }
