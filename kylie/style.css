@@ -1,9 +1,15 @@
+@font-face {
+    font-family: reey;
+    src: url('./Fonts/Reey-Regular.otf')
+}
 h1 {
     color: cadetblue;
+    font-family: "Comforter Brush";
 }
 
 p {
     color: palevioletred;
+<<<<<<< HEAD
 }
 .nav-component ul {
     display:flex;
@@ -24,3 +30,7 @@ p {
     transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220); 
     transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); 
   }
+=======
+    
+}
+>>>>>>> ae9c7a287f0af3b2d74213afd9bfe9a62aeea392
