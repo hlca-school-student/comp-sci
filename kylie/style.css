@@ -1,7 +1,13 @@
+@font-face {
+    font-family: reey;
+    src: url('./Fonts/Reey-Regular.otf')
+}
 h1 {
     color: cadetblue;
+    font-family: "Comforter Brush";
 }
 
 p {
     color: palevioletred;
+    
 }
