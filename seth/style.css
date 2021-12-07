@@ -1,3 +1,21 @@
+
+h1 {
+    font-family: "Pacifico", serif;
+    font-size: 57px;
+    font-weight: 400;
+    color: blue;
+    background-color: green;
+}
+
+p {
+    color: red;
+    background-color: orange;
+}
+@font-face {
+    font-family: AlexBrush;
+    src: url('./Fonts/AlexBrush-Regular.ttf')
+}
+
 .nav-component ul {
     display: flex;
     flex-direction: row;
