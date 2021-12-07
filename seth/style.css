@@ -36,3 +36,16 @@ p {
   .nav-component ul li a:hover {
     color:red;
   }
+
+  .grid-component {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .grid-component .grid-item {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 10px;
+    min-width: 200px;
+  }
