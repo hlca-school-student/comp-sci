@@ -1,3 +1,21 @@
+
+h1 {
+    font-family: "Pacifico", serif;
+    font-size: 57px;
+    font-weight: 400;
+    color: blue;
+    background-color: green;
+}
+
+p {
+    color: red;
+    background-color: orange;
+}
+@font-face {
+    font-family: AlexBrush;
+    src: url('./Fonts/AlexBrush-Regular.ttf')
+}
+
 .nav-component ul {
     display: flex;
     flex-direction: row;
@@ -17,4 +35,17 @@
   
   .nav-component ul li a:hover {
     color:red;
+  }
+
+  .grid-component {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .grid-component .grid-item {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 10px;
+    min-width: 200px;
   }
