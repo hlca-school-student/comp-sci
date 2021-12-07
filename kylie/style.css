@@ -9,7 +9,6 @@ h1 {
 
 p {
     color: palevioletred;
-<<<<<<< HEAD
 }
 .nav-component ul {
     display:flex;
@@ -30,7 +29,16 @@ p {
     transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220); 
     transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); 
   }
-=======
-    
-}
->>>>>>> ae9c7a287f0af3b2d74213afd9bfe9a62aeea392
+  .grid-component{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .grid-component .grid-item {
+    width: 200px;
+    height:200px;
+    background-color: black;
+    margin:10px;
+    min-width:200px;
+  }
+  
