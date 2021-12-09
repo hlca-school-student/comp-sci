@@ -1,15 +1,17 @@
 h1 {
-    color: purple;
-    background-color: #00FF00;
-    text-decoration: overline;
+  color: #000000;
 }
 
 p {
-    color: palevioletred;
+    color: #000000;
 }
 nav {
     text-align: center;
     font-size: 2em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    background-color: #FFFFFF;
   }
   /* .nav-component li {
     list-style-type: none;
@@ -39,7 +41,6 @@ nav {
     transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
   .grid-item {
-    width: 200px;
     height: 200px;
     background-color: #000000;
     margin: 1em;
@@ -50,3 +51,13 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+@media screen and (max-width: 765px) and (min-width: 481px) {
+  .grid-component {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 480px) {
+  .grid-component {
+    grid-template-columns: 1fr;
+  }
+}
