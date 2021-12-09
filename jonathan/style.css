@@ -1,10 +1,9 @@
 h1 {
-    color: purple;
-    background-color: #00FF00;
+  color: #000000;
 }
 
 p {
-    color: palevioletred;
+    color: #000000;
 }
 nav {
     text-align: center;
@@ -52,3 +51,13 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+@media screen and (max-width: 765px) and (min-width: 481px) {
+  .grid-component {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 480px) {
+  .grid-component {
+    grid-template-columns: 1fr;
+  }
+}
