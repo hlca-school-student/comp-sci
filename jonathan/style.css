@@ -40,12 +40,18 @@ nav {
     transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
     transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
+  /* Divs */
   .grid-item {
     height: 200px;
     background-color: #000000;
     margin: 1em;
     /* display: inline-block; */
+    transition: background-color .25s;
   }
+  .grid-item:hover {
+    background-color: #9999a1;
+  }
+  /* Section */
   .grid-component {
     /* display: flex; */
     display: grid;
