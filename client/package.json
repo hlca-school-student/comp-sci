@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/hlca-school-student/comp-sci#readme",
   "dependencies": {
+    "debug": "^4.3.3",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.15"
   }
 }
