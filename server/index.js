@@ -25,7 +25,13 @@ app.use(cors());
 // Consume all the routes
 routes(app);
 
+// render index.html
+app.get('/',function(req,res) {
+    res.sendFile('index.html');
+});
+
  // Start the Proxy
 app.listen(PORT, HOST, () => {
     console.log(`Starting Proxy at ${HOST}:${PORT}`);
+
  });
