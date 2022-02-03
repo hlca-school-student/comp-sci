@@ -15,13 +15,13 @@ function writeHunts(listedHunts) {
         listedHunts.rows.forEach((hunt) => {
             tableRoot.innerHTML += `
                 <tr>
-                    <td>${hunt.tag}</td>
-                    <td>${hunt.open}</td>
-                    <td>${hunt.close}</td>
-                    <td>${hunt.ornament}</td>
-                    <td>${hunt.game}</td>
-                    <td>${hunt.method}</td>
-                    <td>${hunt.area}</td>
+                    <td style="border:1px solid black;">${hunt.tag}</td>
+                    <td style="border:1px solid black;">${hunt.open}</td>
+                    <td style="border:1px solid black;">${hunt.close}</td>
+                    <td style="border:1px solid black;">${hunt.ornament}</td>
+                    <td style="border:1px solid black;">${hunt.game}</td>
+                    <td style="border:1px solid black;">${hunt.method}</td>
+                    <td style="border:1px solid black;">${hunt.area}</td>
                 </tr>
             `;
         })

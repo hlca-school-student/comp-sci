@@ -7,44 +7,67 @@
     <script src="public/js/main.js"></script>
     <title>HOTL Hunt Planner</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        tr:nth-of-type(2n){
+            background-color: #9EC2EB;
+        }
+        tr:hover {
+            background-color: #CECECE;
+        }
+    </style>
 </head>
 <body>
     <h1>Hunting App</h1>
     <form>
-        <select>
-            <option>tag</option>
+        <label for="tag">Tag</label>
+        <select id="tag">
+            <option value="">--Select One--</option>
         </select>
-        <select>
-            <option>open</option>
+        <label for="open">Open</label>
+        <select id="open">
+            <option value="">--Select One--</option>
         </select>
-        <select>
-            <option>close</option>
+        <label for="close">Close</label>
+        <select id="close">
+            <option value="">--Select One--</option>
         </select>
-        <select>
-            <option>sex/antler</option>
+        <label for="ornament">Sex/Antler</label>
+        <select id="ornament">
+            <option value="">--Select One--</option>
         </select>
-        <select>
-            <option>game</option>
+        <label for="game">Game</label>
+        <select id="game">
+            <option value="">--Select One--</option>
         </select>
-        <select>
-            <option>method</option>
+        <label for="method">Method</label>
+        <select id="method">
+            <option value="">--Select One--</option>
         </select>
-        <select>
-            <option>area</option>
+        <label for="area">Area</label>
+        <select id="area">
+            <option value="">--Select One--</option>
         </select>
 
         <button type="button" onclick="get()">Submit</button>
     </form>
-    <table>
+    <br><br>
+    <table style="border-collapse: collapse;">
         <thead>
             <tr>
-                <th>tag</th>
-                <th>open</th>
-                <th>close</th>
-                <th>sex/antler</th>
-                <th>game</th>
-                <th>method</th>
-                <th>area</th>
+                <th style="border: 1px solid black">Tag</th>
+                <th style="border: 1px solid black">Open</th>
+                <th style="border: 1px solid black">Close</th>
+                <th style="border: 1px solid black">Sex/Antler</th>
+                <th style="border: 1px solid black">Game</th>
+                <th style="border: 1px solid black">Method</th>
+                <th style="border: 1px solid black">Area</th>
             </tr>
         </thead>
         <tbody id="tableRoot">

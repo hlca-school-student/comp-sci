@@ -46,7 +46,7 @@ nav {
     background-color: #000000;
     margin: 1em;
     /* display: inline-block; */
-    transition: background-color .25s;
+    transition: background-color .75s;
   }
   .grid-item:hover {
     background-color: #9999a1;
