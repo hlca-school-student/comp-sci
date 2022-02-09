@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+tr:nth-of-type(2n){
+    background-color: #9EC2EB;
+}
+tr:hover {
+    background-color: #CECECE;
+}
+
+.table-cell {
+    padding: 5px;
+    border: 1px solid grey;
+}
+
+#content-wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.filter-container {
+    display: flex;
+}
+
+.submit {
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: white;
+    background: #9EC2EB;
+    border: none;
+}
+.table-header {
+    border: 1px solid black;
+}
+
