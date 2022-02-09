@@ -1,10 +1,12 @@
 window.addEventListener('DOMContentLoaded', async () => await get())
 
+let allHunts;
 
 async function get() {
     try {
         const listedHuntsStream = await fetch('http://localhost:5050/list');
         const listedHunts = await listedHuntsStream.json();
+        allHunts = listedHunts.rows;
         writeHunts(listedHunts);
     } catch(e) {
         console.error(e);
@@ -41,4 +43,8 @@ function writeHunts(listedHunts) {
             `;
         })
     }
+}
+
+function populateSelectBox(listedHunts, label) {
+    return 
 }
