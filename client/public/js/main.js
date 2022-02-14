@@ -4,10 +4,11 @@ let allHunts;
 
 async function get() {
     try {
-        const listedHuntsStream = await fetch('http://localhost:5050/list');
+        const listedHuntsStream = await fetch(`http://localhost:5050/list/`);
         const listedHunts = await listedHuntsStream.json();
         allHunts = listedHunts.rows;
         writeHunts(listedHunts);
+        buildSelectBoxes();
     } catch(e) {
         console.error(e);
     }
@@ -45,6 +46,27 @@ function writeHunts(listedHunts) {
     }
 }
 
-function populateSelectBox(listedHunts, label) {
-    return 
+function buildSelectBoxes() {
+    const selectBoxes = document.getElementsByClassName('select-box');
+    Array.from(selectBoxes).forEach((selectBox) => {
+        buildSelectBox(selectBox.id, selectBox);
+    })
+}
+
+function buildSelectBox(id, selectBox) {
+    const selectBoxData = _.uniq(_.map(allHunts, hunt => hunt[id]))
+
+    selectBoxData.forEach((label) => {
+        selectBox.innerHTML += `
+            <option value="${label}">${label}</option>
+        `
+    });
+}
+
+function filterTable(selectBoxValueList) {
+
+}
+
+function getSelectBoxValueList() {
+
 }
