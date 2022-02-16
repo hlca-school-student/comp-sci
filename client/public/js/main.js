@@ -15,7 +15,7 @@ async function get() {
 }
 
 function writeHunts(listedHunts) {
-    const tableRoot = document.getElementById('tableRoot');
+    const tableRoot = getTableRoot();
     const tableHeaderRoot = document.getElementById('tableHeaderRoot');
     if (listedHunts.rows.length) {
         tableHeaderRoot.innerHTML = `
@@ -29,25 +29,15 @@ function writeHunts(listedHunts) {
                 <th class="table-header">Area</th>
             </tr>
         `
-
+        tableRoot.innerHTML = '';
         listedHunts.rows.forEach((hunt) => {
-            tableRoot.innerHTML += `
-                <tr>
-                    <td class="table-cell">${hunt.tag}</td>
-                    <td class="table-cell">${hunt.open}</td>
-                    <td class="table-cell">${hunt.close}</td>
-                    <td class="table-cell">${hunt.ornament}</td>
-                    <td class="table-cell">${hunt.game}</td>
-                    <td class="table-cell">${hunt.method}</td>
-                    <td class="table-cell">${hunt.area}</td>
-                </tr>
-            `;
+            tableRoot.innerHTML += makeHuntRow(hunt);
         })
     }
 }
 
 function buildSelectBoxes() {
-    const selectBoxes = document.getElementsByClassName('select-box');
+    const selectBoxes = getSelectBoxes();
     Array.from(selectBoxes).forEach((selectBox) => {
         buildSelectBox(selectBox.id, selectBox);
     })
@@ -64,9 +54,60 @@ function buildSelectBox(id, selectBox) {
 }
 
 function filterTable(selectBoxValueList) {
+    const selectBoxes = Array.from(getSelectBoxes());
+    const selectBoxTypesAndValues = selectBoxes.map((selectBox) => ({
+        [selectBox.id]: selectBox.value,
+    })).filter((val) => !!val);
 
+    const selectBoxMap = makeSelectBoxMap(selectBoxTypesAndValues);
+    const selectBoxKeys = Object.keys(selectBoxMap)
+
+    const filteredHunts = allHunts.filter((huntRow) => {
+        return filterOnCondition(huntRow, selectBoxKeys, selectBoxMap)
+    })
+
+    writeHunts({ rows: filteredHunts });
 }
 
-function getSelectBoxValueList() {
+function filterOnCondition(huntRow, selectBoxKeys, selectBoxMap) {
+    let testResult = false;
+    Object.keys(huntRow).forEach((columnName) => {
+        if(selectBoxKeys.includes(columnName) && (huntRow[columnName] === selectBoxMap[columnName])) {
+            testResult = true;
+        }
+    })
 
+    return testResult;
+}
+
+function makeSelectBoxMap(selectBoxTypesAndValues) {
+    const selectBoxMap = {};
+
+    selectBoxTypesAndValues.forEach((selectBoxTypeAndValue) => {
+        selectBoxMap[Object.keys(selectBoxTypeAndValue)[0]] = selectBoxTypeAndValue[Object.keys(selectBoxTypeAndValue)[0]];
+    });
+
+    return selectBoxMap;
+}
+
+function getSelectBoxes() {
+    return document.getElementsByClassName('select-box');
+}
+
+function getTableRoot() {
+    return document.getElementById('tableRoot');
+}
+
+function makeHuntRow(hunt) {
+    return `
+        <tr>
+            <td class="table-cell">${hunt.tag}</td>
+            <td class="table-cell">${hunt.open}</td>
+            <td class="table-cell">${hunt.close}</td>
+            <td class="table-cell">${hunt.ornament}</td>
+            <td class="table-cell">${hunt.game}</td>
+            <td class="table-cell">${hunt.method}</td>
+            <td class="table-cell">${hunt.area}</td>
+        </tr>
+    `
 }
