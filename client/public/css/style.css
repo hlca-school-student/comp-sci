@@ -23,9 +23,9 @@ tr:hover {
 }
 
 .filter-container {
-    display: flex;
+    display: block;  
+    text-align: left;
 }
-
 .submit {
     margin-top: 20px;
     padding: 10px 20px;
