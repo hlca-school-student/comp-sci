@@ -7,17 +7,17 @@ async function get() {
         const listedHuntsStream = await fetch(`http://localhost:5050/list/`);
         const listedHunts = await listedHuntsStream.json();
         allHunts = listedHunts.rows;
-        writeHunts(listedHunts);
+        writeHunts();
         buildSelectBoxes();
     } catch(e) {
         console.error(e);
     }
 }
 
-function writeHunts(listedHunts) {
+function writeHunts() {
     const tableRoot = getTableRoot();
     const tableHeaderRoot = document.getElementById('tableHeaderRoot');
-    if (listedHunts.rows.length) {
+    if (allHunts.length) {
         tableHeaderRoot.innerHTML = `
             <tr>
                 <th class="table-header">Tag</th>
@@ -30,7 +30,7 @@ function writeHunts(listedHunts) {
             </tr>
         `
         tableRoot.innerHTML = '';
-        listedHunts.rows.forEach((hunt) => {
+        allHunts.forEach((hunt) => {
             tableRoot.innerHTML += makeHuntRow(hunt);
         })
     }

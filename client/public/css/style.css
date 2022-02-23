@@ -18,12 +18,17 @@ tr:hover {
 }
 
 #content-wrapper {
-    width: 800px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
+#table-container {
+    overflow-x: scroll;
+}
+
 .filter-container {
-    display: block;  
+    display: block;
     text-align: left;
 }
 .submit {

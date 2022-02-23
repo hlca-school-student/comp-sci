@@ -12,8 +12,9 @@
 <body>
     <main id="content-wrapper">
         <h1>Hunting App</h1>
-        <form>
-            <section class="filter-container">
+
+        <section class="filter-container">
+            <form>
                 <div class="filter">
                     <label for="tag">Tag</label>
                     <select id="tag" class="select-box">
@@ -56,19 +57,21 @@
                         <option value="">--Select One--</option>
                     </select>
                 </div>
-            </section>
-
-            <button class="submit" type="button" onclick="filterTable()">Submit</button>
-        </form>
+                <button class="submit" type="button" onclick="filterTable()">Submit</button>
+            </form>
+        </section>
         <br><br>
-        <table style="border-collapse: collapse;">
-            <thead id="tableHeaderRoot">
 
-            </thead>
-            <tbody id="tableRoot">
+        <section id="table-container">
+            <table style="border-collapse: collapse;">
+                <thead id="tableHeaderRoot">
 
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="tableRoot">
+
+                </tbody>
+            </table>
+        </section>
     </main>
 </body>
 </html>
