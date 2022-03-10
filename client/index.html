@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>Hunting App</h1>
     <form>
         <select></select>
@@ -25,5 +26,70 @@
             <th>area</th>
         </tr>
     </table>
+=======
+    <main id="content-wrapper">
+        <h1>Hunting App</h1>
+
+        <section class="filter-container">
+            <form>
+                <div class="filter">
+                    <label for="tag">Tag</label>
+                    <select id="tag" class="select-box">
+                        <option value="">--Select One--</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="open">Open</label>
+                    <select id="open" class="select-box">
+                        <option value="">--Select One--</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="close">Close</label>
+                    <select id="close" class="select-box">
+                        <option value="">--Select One--</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="ornament">Sex/Antler</label>
+                    <select id="ornament" class="select-box">
+                        <option value="">--Select One--</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="game">Game</label>
+                    <select id="game" class="select-box">
+                        <option value="">--Select One--</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="method">Method</label>
+                    <select id="method" class="select-box">
+                        <option value="">--Select One--</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="area">Area</label>
+                    <select id="area" class="select-box">
+                        <option value="">--Select One--</option>
+                    </select>
+                </div>
+                <button class="submit" type="button" onclick="filterTable()">Submit</button>
+            </form>
+        </section>
+        <br><br>
+
+        <section id="table-container">
+            <table style="border-collapse: collapse;">
+                <thead id="tableHeaderRoot">
+
+                </thead>
+                <tbody id="tableRoot">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+>>>>>>> ebf35d1042df7d6d3f5b5cfcb8b6183ffcbd3d98
 </body>
 </html>
